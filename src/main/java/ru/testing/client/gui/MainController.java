@@ -3,6 +3,8 @@ package ru.testing.client.gui;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -14,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import org.controlsfx.control.PopOver;
+import org.controlsfx.control.action.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.testing.client.message.MessageType;
@@ -59,6 +62,7 @@ public class MainController {
     @FXML private Button filterAddBtn;
     @FXML private MenuButton filterList;
     @FXML private Label timeDiffLabel;
+    @FXML private MenuItem saveOutputMenuItem;
 
     /**
      * Method run then this controller initialize
@@ -176,6 +180,11 @@ public class MainController {
                 historyPopOver.hide();
             }
         }));
+
+        saveOutputMenuItem.setOnAction(event -> {
+            FileOperations.logListViewIntoFile(outputText);
+
+        });
     }
 
     /**

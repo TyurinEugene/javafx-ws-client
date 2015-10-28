@@ -20,7 +20,7 @@
     <MenuBar maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
              GridPane.rowIndex="0">
         <Menu text="File">
-            <MenuItem mnemonicParsing="false" text="Save output"/>
+            <MenuItem mnemonicParsing="false" text="Save output" fx:id="saveOutputMenuItem"/>
             <MenuItem mnemonicParsing="false" text="Load profile"/>
             <SeparatorMenuItem/>
             <MenuItem fx:id="exitPlatform" mnemonicParsing="false" text="Exit"/>
