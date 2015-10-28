@@ -3,8 +3,6 @@ package ru.testing.client.gui.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -16,7 +14,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import org.controlsfx.control.PopOver;
-import org.controlsfx.control.action.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.testing.client.commons.OutputFormat;
@@ -80,21 +77,8 @@ public class MainController {
     private MenuButton filterList;
     @FXML
     private Label timeDiffLabel;
-    @FXML private MenuItem exitPlatform;
-    @FXML private TextField serverUrl;
-    @FXML private Button connectBtn;
-    @FXML private Circle status;
-    @FXML protected TextField messageText;
-    @FXML private Button messageSendBtn;
-    @FXML protected ToggleButton messageSendHistoryBtn;
-    @FXML private ListView<OutputMessage> outputText;
-    @FXML private ToggleButton autoScroll;
-    @FXML private ToggleButton filterOnOffBtn;
-    @FXML private TextField filterText;
-    @FXML private Button filterAddBtn;
-    @FXML private MenuButton filterList;
-    @FXML private Label timeDiffLabel;
-    @FXML private MenuItem saveOutputMenuItem;
+    @FXML
+    private MenuItem saveOutputMenuItem;
 
     /**
      * Method run then this controller initialize
@@ -202,11 +186,6 @@ public class MainController {
                 historyPopOver.hide();
             }
         }));
-
-        saveOutputMenuItem.setOnAction(event -> {
-            FileOperations.logListViewIntoFile(outputText);
-
-        });
     }
 
     /**

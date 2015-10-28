@@ -1,6 +1,8 @@
 package ru.testing.client.gui.tools;
 
 import javafx.application.Platform;
+import javafx.scene.control.ListView;
+import ru.testing.client.gui.message.OutputMessage;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
